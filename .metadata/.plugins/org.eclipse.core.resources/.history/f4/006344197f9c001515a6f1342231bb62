@@ -1,0 +1,51 @@
+import javax.swing.ImageIcon;
+
+public class Brick extends Sprite{
+
+    private boolean destroyed;
+    private int hits;
+
+    public Brick(int x, int y){
+        
+        this.x = x;
+        this.y = y;
+
+        ImageIcon ii = new ImageIcon("./Sprites/brick1.png");
+        image = ii.getImage();
+
+        i_width = image.getWidth(null);
+        i_heigth = image.getHeight(null);
+
+        destroyed = false;
+        hits = 1;
+    }
+
+    public Brick(int x, int y, int hits){
+        
+        this.x = x;
+        this.y = y;
+
+        ImageIcon ii = new ImageIcon("brick.png");
+        image = ii.getImage();
+
+        i_width = image.getWidth(null);
+        i_heigth = image.getHeight(null);
+
+        destroyed = false;
+        this.hits = hits;
+    }
+    
+    public boolean isDestroyed(){
+        
+        return destroyed;
+    }
+
+    public void setDestroyed(boolean choice){
+        
+        destroyed = choice;
+    }
+    
+    public int getHits(){
+    	return hits;
+    }
+}
